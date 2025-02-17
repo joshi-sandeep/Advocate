@@ -13,8 +13,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -25,7 +23,6 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -37,27 +34,18 @@ export default function ContactForm() {
     },
   });
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
-    try {
-      setIsSubmitting(true);
-      const response = await apiRequest("POST", "/api/contact", data);
-      const result = await response.json();
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    // Display success message
+    toast({
+      title: "Message received",
+      description: "Thank you for your message. We'll get back to you soon.",
+    });
 
-      toast({
-        title: "Message sent",
-        description: result.message,
-      });
+    // Reset form
+    form.reset();
 
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Log the form data (for demonstration)
+    console.log("Form submitted:", data);
   }
 
   return (
@@ -123,8 +111,8 @@ export default function ContactForm() {
           )}
         />
 
-        <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send Message"}
+        <Button type="submit" size="lg" className="w-full">
+          Send Message
         </Button>
       </form>
     </Form>

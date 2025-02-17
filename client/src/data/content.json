@@ -1,0 +1,122 @@
+{
+  "siteInfo": {
+    "name": "James Wilson",
+    "title": "Attorney at Law",
+    "contact": {
+      "address": "123 Legal Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "phone": "(555) 123-4567",
+      "email": "contact@jameswilson.law",
+      "officeHours": [
+        "Monday - Friday: 9:00 AM - 6:00 PM",
+        "Saturday: By Appointment",
+        "Sunday: Closed"
+      ]
+    }
+  },
+  "hero": {
+    "title": "Expert Legal Representation You Can Trust",
+    "subtitle": "With over 20 years of experience, we provide comprehensive legal services tailored to your needs.",
+    "backgroundImage": "https://images.unsplash.com/photo-1464316325666-63beaf639dbb"
+  },
+  "practiceAreas": [
+    {
+      "title": "Civil Litigation",
+      "description": "Expert representation in civil disputes, contract matters, and commercial litigation.",
+      "icon": "Scale"
+    },
+    {
+      "title": "Family Law",
+      "description": "Compassionate guidance through divorce, custody, and family-related legal matters.",
+      "icon": "Users"
+    },
+    {
+      "title": "Corporate Law",
+      "description": "Strategic legal counsel for businesses of all sizes, from startups to corporations.",
+      "icon": "Building2"
+    },
+    {
+      "title": "Employment Law",
+      "description": "Protection of both employer and employee rights in workplace matters.",
+      "icon": "Briefcase"
+    },
+    {
+      "title": "Real Estate Law",
+      "description": "Comprehensive real estate services including purchases, sales, leases, and property disputes.",
+      "icon": "Home"
+    },
+    {
+      "title": "Estate Planning",
+      "description": "Thorough estate planning services including wills, trusts, and power of attorney.",
+      "icon": "FileText"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "title": "Business Owner",
+      "content": "Attorney Wilson provided exceptional guidance during our company's merger. His expertise in corporate law was invaluable, and his attention to detail ensured a smooth transaction.",
+      "rating": 5
+    },
+    {
+      "name": "Michael Chen",
+      "title": "Real Estate Developer",
+      "content": "I've worked with many lawyers over the years, but James stands out for his professionalism and deep knowledge of real estate law. He's my go-to counsel for all legal matters.",
+      "rating": 5
+    },
+    {
+      "name": "Emily Rodriguez",
+      "title": "Family Law Client",
+      "content": "During a difficult divorce, James provided not just legal expertise but also compassionate support. He helped me navigate the process with confidence and achieved the best possible outcome.",
+      "rating": 5
+    },
+    {
+      "name": "David Thompson",
+      "title": "Corporate Executive",
+      "content": "James's strategic approach to litigation saved our company both time and money. His ability to anticipate and address potential issues before they arise is remarkable.",
+      "rating": 5
+    }
+  ],
+  "about": {
+    "introduction": "Dedicated to providing exceptional legal services with integrity and professionalism.",
+    "background": [
+      "James Wilson brings over two decades of legal experience to his practice. After graduating from Harvard Law School with honors, he began his career at one of New York's premier law firms.",
+      "Throughout his career, James has successfully handled numerous high-profile cases and has earned a reputation for his thorough preparation, strategic thinking, and unwavering dedication to his clients.",
+      "His expertise spans multiple areas of law, including civil litigation, corporate law, and family law. James is admitted to practice in all New York State courts and the United States District Court for the Southern and Eastern Districts of New York."
+    ],
+    "education": [
+      "J.D., Harvard Law School (Magna Cum Laude)",
+      "B.A., Yale University (Political Science)"
+    ],
+    "barAdmissions": [
+      "New York State Bar",
+      "U.S. District Court, Southern District of New York",
+      "U.S. District Court, Eastern District of New York"
+    ],
+    "memberships": [
+      "New York State Bar Association",
+      "American Bar Association",
+      "New York City Bar Association"
+    ]
+  },
+  "faq": [
+    {
+      "question": "What areas of law do you practice?",
+      "answer": "We specialize in various areas including civil litigation, family law, corporate law, employment law, real estate law, and estate planning. Each practice area is handled by experienced attorneys who focus on providing comprehensive legal solutions."
+    },
+    {
+      "question": "How much do your legal services cost?",
+      "answer": "Our fees vary depending on the type and complexity of your case. We offer an initial consultation where we can discuss your specific needs and provide a clear understanding of the potential costs involved. We strive to maintain transparent pricing and can discuss payment plans when necessary."
+    },
+    {
+      "question": "How long will my case take?",
+      "answer": "The duration of a case varies significantly depending on its nature and complexity. Some matters can be resolved in a few weeks, while others might take several months or even years. During our initial consultation, we can provide a more accurate timeline based on your specific situation."
+    },
+    {
+      "question": "Do you offer free consultations?",
+      "answer": "Yes, we offer a free initial consultation for most cases. This allows us to understand your legal needs and determine how we can best assist you. During this consultation, we'll discuss your case, potential strategies, and estimated costs."
+    }
+  ]
+}
