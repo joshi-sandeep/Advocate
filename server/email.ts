@@ -2,7 +2,9 @@ import nodemailer from "nodemailer";
 
 // Create reusable transporter object using SMTP transport
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // use SSL
   auth: {
     user: 'sjoshi1171@gmail.com',
     pass: process.env.GMAIL_APP_PASSWORD
