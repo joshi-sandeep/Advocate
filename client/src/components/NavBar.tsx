@@ -19,7 +19,7 @@ export default function NavBar() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/">
             <a className="text-xl font-semibold text-primary">
-              James Wilson
+            Jai Kulkarni
               <span className="text-sm font-normal ml-2">Attorney at Law</span>
             </a>
           </Link>

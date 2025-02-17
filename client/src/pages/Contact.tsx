@@ -32,8 +32,8 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-2">Office Location</h3>
                       <p className="text-muted-foreground">
-                        123 Legal Street<br />
-                        New York, NY 10001
+                       Navanagar<br />
+                        sector 40
                       </p>
                     </div>
                   </div>
@@ -58,7 +58,7 @@ export default function Contact() {
                     <Mail className="h-6 w-6 text-primary shrink-0" />
                     <div>
                       <h3 className="font-semibold mb-2">Email</h3>
-                      <p className="text-muted-foreground">contact@jameswilson.law</p>
+                      <p className="text-muted-foreground">jaikulkarni@gmail.com</p>
                     </div>
                   </div>
                 </CardContent>

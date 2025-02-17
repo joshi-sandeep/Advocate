@@ -87,13 +87,13 @@ export default function Home() {
           <div>
             <img
               src="https://images.unsplash.com/photo-1507679799987-c73779587ccf"
-              alt="Attorney James Wilson"
+              alt="Jai Kulkarni"
               className="rounded-lg shadow-lg"
             />
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              Meet Attorney James Wilson
+              Meet Jai Kulkarni
             </h2>
             <p className="text-muted-foreground mb-6">
               With decades of experience and a track record of success, James
