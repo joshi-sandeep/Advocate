@@ -86,7 +86,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf"
+              src="https://scontent.fblr20-3.fna.fbcdn.net/v/t1.6435-9/57127020_512415419288287_5640583126817177600_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=1xEY76e6D84Q7kNvgHUw9i3&_nc_oc=AdjuQCCm--SAYa-CN1EkKlq88gMJ_0nFSfAMdcoy7p4EWQDkzlDIKXoc4j0ICkoM1D4OItz3nbSyxHaBxtD_OqeE&_nc_zt=23&_nc_ht=scontent.fblr20-3.fna&_nc_gid=A6WPvkMux_EsCg86wzvdP6P&oh=00_AYDLxMfEQD3jXBUPdYLqtEQ2VpQ7huirmUdvnKw9pc3otw&oe=67DAC073"
               alt="Jai Kulkarni"
               className="rounded-lg shadow-lg"
             />
