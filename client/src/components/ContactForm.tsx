@@ -13,7 +13,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Rss } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -22,10 +24,12 @@ const formSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
+type FormData = z.infer<typeof formSchema>;
+
 export default function ContactForm() {
   const { toast } = useToast();
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -35,15 +39,54 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
-    // Display demo message
-    toast({
-      title: "Demo Form",
-      description: "This is a demo contact form. In a real application, this would send your message to the law firm.",
-    });
+  const mutation = useMutation({
+    mutationFn: async (data: FormData) => {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+     
+   
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+   
+      // Log raw text response
+      // const text = await response.text();
+      console.log("Raw Response Body:", response.statusText);
+   
+      // Parse JSON safely
+      try {
+        return response.statusText
+      } catch (error) {
+        console.error("JSON Parsing Error:", error);
+        throw new Error('Invalid JSON response from server');
+      }
+    },
+  
+    onSuccess: () => {
+      toast({
+        title: "Message Sent",
+        description: "Thank you for your message. We'll get back to you soon.",
+      });
+      form.reset();
+    },
+  
+    onError: (error) => {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+  
 
-    // Reset form
-    form.reset();
+  function onSubmit(data: FormData) {
+    mutation.mutate(data);
   }
 
   return (
@@ -118,8 +161,13 @@ export default function ContactForm() {
             )}
           />
 
-          <Button type="submit" size="lg" className="w-full">
-            Send Message (Demo)
+          <Button 
+            type="submit" 
+            size="lg" 
+            className="w-full"
+            disabled={mutation.isPending}
+          >
+            {mutation.isPending ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </Form>
