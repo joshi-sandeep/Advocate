@@ -39,34 +39,80 @@ export default function ContactForm() {
     },
   });
 
+  // const mutation = useMutation({
+  //   mutationFn: async (data: FormData) => {
+  //     const res = await apiRequest("POST", "/api/contact", data);
+  //     console.log("res", res);
+  //     return res.json();
+  //   },
+    
+  //   onSuccess: () => {
+  //     toast({
+  //       title: "Message Sent",
+  //       description: "Thank you for your message. We'll get back to you soon.",
+  //     });
+  //     form.reset();
+  //   },
+  //   onError: (error) => {
+  //     toast({
+  //       title: "Error",
+  //       description:  "Failed to send message. Please try again.",
+  //       variant: "destructive",
+  //     });
+  //   },
+  // });
+
+  // const mutation = useMutation({
+  //   mutationFn: async (data: FormData) => {
+  //     try {
+  //       const res = await apiRequest("POST", "/api/contact", data);
+        
+  //       if (!res.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  
+  //       // Ensure we only call res.json() if body is available
+  //       const responseData = await res.json().catch(() => null);
+  
+  //       return responseData;
+  //     } catch (error) {
+  //       console.error("Mutation error:", error);
+  //       throw error;
+  //     }
+  //   },
   const mutation = useMutation({
-    mutationFn: async (data: FormData) => {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+    // mutationFn: async (data: FormData) => {
+    //   const response = await fetch('/api/contact', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //   });
      
    
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
+    //   if (!response.ok) {
+    //     throw new Error('Failed to send message');
+    //   }
    
-      // Log raw text response
-      // const text = await response.text();
-      console.log("Raw Response Body:", response.statusText);
+    //   // Log raw text response
+    //   // const text = await response.text();
+    //   console.log("Raw Response Body:", response.statusText);
    
-      // Parse JSON safely
-      try {
-        return response.statusText
-      } catch (error) {
-        console.error("JSON Parsing Error:", error);
-        throw new Error('Invalid JSON response from server');
-      }
-    },
+    //   // Parse JSON safely
+    //   try {
+    //     return response.statusText
+    //   } catch (error) {
+    //     console.error("JSON Parsing Error:", error);
+    //     throw new Error('Invalid JSON response from server');
+    //   }
+    // },
   
+    mutationFn: async (data: FormData) => {
+      const apiUrl = import.meta.env.PROD ? '/.netlify/functions/api/contact' : '/api/contact';
+      const res = await apiRequest("POST", apiUrl, data);
+      return res.json();
+    },
     onSuccess: () => {
       toast({
         title: "Message Sent",
