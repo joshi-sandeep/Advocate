@@ -111,6 +111,7 @@ export default function ContactForm() {
     mutationFn: async (data: FormData) => {
       const apiUrl = import.meta.env.PROD ? '/.netlify/functions/api/contact' : '/api/contact';
       const res = await apiRequest("POST", apiUrl, data);
+      console.log(" import.meta.env.PROD",  import.meta.env.PROD)
       return res.json();
     },
     onSuccess: () => {
